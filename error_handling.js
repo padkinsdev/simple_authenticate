@@ -3,7 +3,7 @@ const fs = require('fs');
 function get_error_file(code) {
     fs.open(`./errors/${code}.html`, 'r', (err, file) => {
         if (err) {
-            if (err.code === 'ENOENT') {
+            if (err.code === 'ENOENT') { // does the file exist?
                 console.log(`./errors/${code}.html does not exist`);
             } else {
                 console.log(err);
